@@ -3,13 +3,13 @@ public class Institucion
     public string Nombre { get; private set; }
     public string CUIT { get; private set; }
     public string Direccion { get; private set; }
-    private List<string> carreras;
+    private readonly List<string> Carreras;
 
-    public Institucion(string Cuit, string nombre, string direccion)
+    public Institucion(string cuit, string nombre, string direccion, List<string> carreras)
     {
-        CUIT = Cuit;
+        CUIT = cuit;
         Nombre = nombre;
         Direccion = direccion;
-        carreras = new List<string>();
-    }
+        Carreras = carreras;
+    }   
 }
