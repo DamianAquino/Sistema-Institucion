@@ -1,4 +1,4 @@
-﻿using API_Institucion.Datos.Dtos;
+﻿using API_Institucion.Interfaces;
 using API_Institucion.Persistencia;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

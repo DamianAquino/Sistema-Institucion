@@ -16,6 +16,7 @@ namespace API_Institucion.Controllers
         [HttpGet("{id}")]
         public IActionResult Get_ID(int id)
         {
+            Console.WriteLine(id);
             var carrera = new { Id = id, Nombre = "Ingeniería", Duracion = 5, Director = "Tal", Comisiones = "comisiones" };
 
             return Ok(carrera);

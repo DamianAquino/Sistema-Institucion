@@ -1,4 +1,4 @@
-﻿namespace API_Institucion.Datos.Dtos
+﻿namespace API_Institucion.Interfaces
 {
     public class MateriaDto
     {

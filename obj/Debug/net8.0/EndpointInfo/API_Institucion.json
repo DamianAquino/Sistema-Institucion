@@ -5,10 +5,103 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Auth/login": {
+    "/api/AuthAdministrador/login": {
       "post": {
         "tags": [
-          "Auth"
+          "AuthAdministrador"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Login"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Login"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Login"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/AuthAdministrador/registrar": {
+      "post": {
+        "tags": [
+          "AuthAdministrador"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdministradorDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdministradorDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdministradorDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/AuthAlumno/login": {
+      "post": {
+        "tags": [
+          "AuthAlumno"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Login"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Login"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Login"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/AuthAlumno/registrar": {
+      "post": {
+        "tags": [
+          "AuthAlumno"
         ],
         "requestBody": {
           "content": {
@@ -36,10 +129,41 @@
         }
       }
     },
-    "/api/Auth/registrar": {
+    "/api/AuthProfesor/login": {
       "post": {
         "tags": [
-          "Auth"
+          "AuthProfesor"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Login"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Login"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Login"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/AuthProfesor/registrar": {
+      "post": {
+        "tags": [
+          "AuthProfesor"
         ],
         "requestBody": {
           "content": {
@@ -193,14 +317,18 @@
   },
   "components": {
     "schemas": {
-      "MateriaDto": {
-        "type": "object",
-        "additionalProperties": false
-      },
-      "UsuarioDto": {
+      "AdministradorDto": {
         "type": "object",
         "properties": {
+          "rol": {
+            "type": "integer",
+            "format": "int32"
+          },
           "dni": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombre": {
             "type": "string",
             "nullable": true
           },
@@ -208,7 +336,55 @@
             "type": "string",
             "nullable": true
           },
-          "carrera": {
+          "departamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Login": {
+        "type": "object",
+        "properties": {
+          "dni": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "MateriaDto": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "UsuarioDto": {
+        "type": "object",
+        "properties": {
+          "rol": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dni": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "departamento": {
             "type": "string",
             "nullable": true
           },

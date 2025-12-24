@@ -1,31 +1,95 @@
 [
   {
-    "ContainingType": "API_Institucion.Controllers.AuthController",
+    "ContainingType": "API_Institucion.Controllers.Administrador.AuthAdministrador",
     "Method": "login",
-    "RelativePath": "api/Auth/login",
+    "RelativePath": "api/AuthAdministrador/login",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "usuario_dto",
-        "Type": "API_Institucion.Datos.Dtos.UsuarioDto",
+        "Name": "login",
+        "Type": "API_Institucion.Dtos.Login",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "API_Institucion.Controllers.AuthController",
-    "Method": "RegistrarAlumno",
-    "RelativePath": "api/Auth/registrar",
+    "ContainingType": "API_Institucion.Controllers.Administrador.AuthAdministrador",
+    "Method": "Registrar",
+    "RelativePath": "api/AuthAdministrador/registrar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "administrador_dto",
+        "Type": "API_Institucion.Dtos.AdministradorDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Institucion.Controllers.Alumno.AuthAlumno",
+    "Method": "login",
+    "RelativePath": "api/AuthAlumno/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "login",
+        "Type": "API_Institucion.Dtos.Login",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Institucion.Controllers.Alumno.AuthAlumno",
+    "Method": "Registrar",
+    "RelativePath": "api/AuthAlumno/registrar",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "usuario_dto",
-        "Type": "API_Institucion.Datos.Dtos.UsuarioDto",
+        "Type": "API_Institucion.Interfaces.UsuarioDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Institucion.Controllers.Profesor.AuthProfesor",
+    "Method": "login",
+    "RelativePath": "api/AuthProfesor/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "login",
+        "Type": "API_Institucion.Dtos.Login",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Institucion.Controllers.Profesor.AuthProfesor",
+    "Method": "Registrar",
+    "RelativePath": "api/AuthProfesor/registrar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuario_dto",
+        "Type": "API_Institucion.Interfaces.UsuarioDto",
         "IsRequired": true
       }
     ],
@@ -67,7 +131,7 @@
     "Parameters": [
       {
         "Name": "materias",
-        "Type": "System.Collections.Generic.List\u00601[[API_Institucion.Datos.Dtos.MateriaDto, API_Institucion, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[API_Institucion.Interfaces.MateriaDto, API_Institucion, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": true
       },
       {

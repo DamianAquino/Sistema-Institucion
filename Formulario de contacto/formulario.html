@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario de Contacto</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      /* Fondo con imagen */
+      background-image: url("https://picsum.photos/1920/1080?blur"); /* reemplaza con tu foto */
+      background-size: cover;       /* ocupa toda la pantalla */
+      background-position: center;  /* centrada */
+      background-repeat: no-repeat; /* sin repetir */
+    }
+
+    .overlay {
+      background: rgba(255, 255, 255, 0.9); /* capa blanca semitransparente */
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 420px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      font-weight: 500;
+      color: #444;
+      margin-top: 1rem;
+      display: block;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-top: 0.4rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 6px rgba(0,123,255,0.2);
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.9rem;
+      margin-top: 1.5rem;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    #respuesta {
+      margin-top: 1rem;
+      text-align: center;
+      font-weight: 500;
+      color: #28a745;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="overlay">
+    <h1>Contacto</h1>
+    <form id="contactForm">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <label for="email">Correo electrónico</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="mensaje">Mensaje</label>
+      <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+    <div id="respuesta"></div>
+  </div>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const respuesta = document.getElementById('respuesta');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const datos = {
+        nombre: document.getElementById('nombre').value,
+        email: document.getElementById('email').value,
+        mensaje: document.getElementById('mensaje').value
+      };
+
+      try {
+        const res = await fetch("https://tu-backend.com/api/contacto", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(datos)
+        });
+
+        if (!res.ok) throw new Error("Error en la petición");
+
+        const data = await res.json();
+        respuesta.textContent = "Mensaje enviado correctamente ✅";
+      } catch (err) {
+        respuesta.textContent = "Hubo un error ❌: " + err.message;
+        respuesta.style.color = "#dc3545";
+      }
+    });
+  </script>
+
+</body>
+</html>
