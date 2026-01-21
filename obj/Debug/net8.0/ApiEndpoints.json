@@ -1,8 +1,8 @@
 [
   {
-    "ContainingType": "API_Institucion.Controllers.Administrador.AuthAdministrador",
+    "ContainingType": "API_Institucion.Controllers.AuthController",
     "Method": "login",
-    "RelativePath": "api/AuthAdministrador/login",
+    "RelativePath": "api/Auth/login",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -16,151 +16,59 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "API_Institucion.Controllers.Administrador.AuthAdministrador",
+    "ContainingType": "API_Institucion.Controllers.AuthController",
     "Method": "Registrar",
-    "RelativePath": "api/AuthAdministrador/registrar",
+    "RelativePath": "api/Auth/registrar",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "administrador_dto",
-        "Type": "API_Institucion.Dtos.AdministradorDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "API_Institucion.Controllers.Alumno.AuthAlumno",
-    "Method": "login",
-    "RelativePath": "api/AuthAlumno/login",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "login",
-        "Type": "API_Institucion.Dtos.Login",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "API_Institucion.Controllers.Alumno.AuthAlumno",
-    "Method": "Registrar",
-    "RelativePath": "api/AuthAlumno/registrar",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "usuario_dto",
-        "Type": "API_Institucion.Interfaces.UsuarioDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "API_Institucion.Controllers.Profesor.AuthProfesor",
-    "Method": "login",
-    "RelativePath": "api/AuthProfesor/login",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "login",
-        "Type": "API_Institucion.Dtos.Login",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "API_Institucion.Controllers.Profesor.AuthProfesor",
-    "Method": "Registrar",
-    "RelativePath": "api/AuthProfesor/registrar",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "usuario_dto",
-        "Type": "API_Institucion.Interfaces.UsuarioDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "API_Institucion.Controllers.CarrerasController",
-    "Method": "Get_Carreras",
-    "RelativePath": "api/Carreras",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "API_Institucion.Controllers.CarrerasController",
-    "Method": "Get_ID",
-    "RelativePath": "api/Carreras/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "API_Institucion.Controllers.UsuarioController",
-    "Method": "InscripcionMateria",
-    "RelativePath": "api/Usuario/materias",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "materias",
-        "Type": "System.Collections.Generic.List\u00601[[API_Institucion.Interfaces.MateriaDto, API_Institucion, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "IsRequired": true
+        "Name": "Rol",
+        "Type": "System.String",
+        "IsRequired": false
       },
       {
-        "Name": "token",
+        "Name": "Dni",
         "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Nombre",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Carrera",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Foto",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
         "IsRequired": false
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "API_Institucion.Controllers.WeatherForecastController",
-    "Method": "Get",
-    "RelativePath": "WeatherForecast",
+    "ContainingType": "API_Institucion.Controllers.UsuarioController",
+    "Method": "obtenerInformacion",
+    "RelativePath": "api/inicio",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[API_Institucion.WeatherForecast, API_Institucion, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ],
-    "EndpointName": "GetWeatherForecast"
+    "ReturnTypes": []
   }
 ]

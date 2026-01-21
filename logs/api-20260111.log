@@ -1,0 +1,27 @@
+2026-01-11 19:22:49.992 -03:00 [INF] User profile is available. Using 'C:\Users\daqui\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-11 19:22:50.813 -03:00 [WRN] Overriding address(es) 'http://0.0.0.0:5000, https://0.0.0.0:5001'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2026-01-11 19:22:51.033 -03:00 [INF] Now listening on: http://0.0.0.0:5000
+2026-01-11 19:22:51.037 -03:00 [INF] Now listening on: https://0.0.0.0:5001
+2026-01-11 19:22:51.562 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-11 19:22:51.576 -03:00 [INF] Hosting environment: Development
+2026-01-11 19:22:51.581 -03:00 [INF] Content root path: C:\Users\daqui\OneDrive\Desktop\Institucion\API_Institucion\Sistema-Institucion
+2026-01-11 19:22:52.019 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2026-01-11 19:22:52.732 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 715.1438ms
+2026-01-11 19:22:52.828 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-11 19:22:52.868 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 40.1042ms
+2026-01-11 19:22:52.879 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_vs/browserLink - null null
+2026-01-11 19:22:52.967 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_vs/browserLink - 200 null text/javascript; charset=UTF-8 87.1357ms
+2026-01-11 19:22:53.288 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - null null
+2026-01-11 19:22:53.400 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 111.5503ms
+2026-01-11 19:23:35.182 -03:00 [INF] Request starting HTTP/1.1 POST https://intractable-asuncion-unseparately.ngrok-free.dev/api/carreras/notificacion_mp?data.id=123456&type=payment - application/json 177
+2026-01-11 19:23:39.061 -03:00 [INF] Executing endpoint 'API_Institucion.Controllers.CarrerasController.notifiacion_mp (API_Institucion)'
+2026-01-11 19:23:39.187 -03:00 [INF] Route matched with {action = "notifiacion_mp", controller = "Carreras"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult notifiacion_mp(System.Text.Json.JsonElement) on controller API_Institucion.Controllers.CarrerasController (API_Institucion).
+2026-01-11 19:23:39.288 -03:00 [INF] 123456 704352573 payment.updated payment 2021-11-01T02:02:02Z 123456
+2026-01-11 19:23:39.296 -03:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2026-01-11 19:23:39.301 -03:00 [INF] Executed action API_Institucion.Controllers.CarrerasController.notifiacion_mp (API_Institucion) in 108.9064ms
+2026-01-11 19:23:39.305 -03:00 [INF] Executed endpoint 'API_Institucion.Controllers.CarrerasController.notifiacion_mp (API_Institucion)'
+2026-01-11 19:23:39.312 -03:00 [INF] Request finished HTTP/1.1 POST https://intractable-asuncion-unseparately.ngrok-free.dev/api/carreras/notificacion_mp?data.id=123456&type=payment - 200 0 null 4135.5088ms
+2026-01-11 21:49:05.702 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-11 21:49:05.838 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 150.1585ms
+2026-01-11 21:49:05.890 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - null null
+2026-01-11 21:49:06.147 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 257.5124ms

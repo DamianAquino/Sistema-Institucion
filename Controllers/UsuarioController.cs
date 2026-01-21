@@ -1,25 +1,34 @@
 ﻿using API_Institucion.Interfaces;
-using API_Institucion.Persistencia;
+using API_Institucion.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.IdentityModel.Tokens.Jwt;
 
 namespace API_Institucion.Controllers
 {
+    [Authorize]
     [ApiController]
-    [Route("/api/[controller]")]
+    [Route("api")]
     public class UsuarioController : ControllerBase
     {
-        private readonly Conexion_Db _contexto_db;
-        private readonly IConfiguration _config;
-
-        public UsuarioController(IConfiguration config, Conexion_Db contexto_db)
+        private readonly IUsuarioService _service;
+        private readonly Logger _logger;
+        public UsuarioController(IUsuarioService service, Logger logger)
         {
-            _contexto_db = contexto_db;
-            _config = config;
+            _service = service;
+            _logger = logger;
         }
 
-        [Authorize(Roles = "Alumno")]
+        [HttpGet("inicio")]
+        public IActionResult obtenerInformacion()
+        {
+            string dni = User.FindFirst("Dni")!.Value;
+
+            var data = _service.obtenerInformacion();
+
+            return Ok();
+        }
+/*
+                [Authorize(Roles = "Alumno")]
         [HttpPost("materias")]
         public IActionResult InscripcionMateria([FromBody] List<MateriaDto> materias, string token)
         {
@@ -37,9 +46,9 @@ namespace API_Institucion.Controllers
 
             // Leer el token sin validarlo
             var jwtToken = handler.ReadJwtToken(token);
-            var dni = jwtToken.Claims.FirstOrDefault(c => c.Type == "UsuarioDni")?.Value;;
+            var dni = jwtToken.Claims.FirstOrDefault(c => c.Type == "UsuarioDni")?.Value;
             
             return dni;
-        }
+        }*/
     }
 }

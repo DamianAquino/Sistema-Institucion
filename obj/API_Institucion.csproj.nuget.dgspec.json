@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\daqui\\OneDrive\\Desktop\\Institucion\\API_Institucion\\API_Institucion.csproj": {}
+    "C:\\Users\\daqui\\OneDrive\\Desktop\\Institucion\\API_Institucion\\Sistema-Institucion\\API_Institucion.csproj": {}
   },
   "projects": {
-    "C:\\Users\\daqui\\OneDrive\\Desktop\\Institucion\\API_Institucion\\API_Institucion.csproj": {
+    "C:\\Users\\daqui\\OneDrive\\Desktop\\Institucion\\API_Institucion\\Sistema-Institucion\\API_Institucion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\daqui\\OneDrive\\Desktop\\Institucion\\API_Institucion\\API_Institucion.csproj",
+        "projectUniqueName": "C:\\Users\\daqui\\OneDrive\\Desktop\\Institucion\\API_Institucion\\Sistema-Institucion\\API_Institucion.csproj",
         "projectName": "API_Institucion",
-        "projectPath": "C:\\Users\\daqui\\OneDrive\\Desktop\\Institucion\\API_Institucion\\API_Institucion.csproj",
+        "projectPath": "C:\\Users\\daqui\\OneDrive\\Desktop\\Institucion\\API_Institucion\\Sistema-Institucion\\API_Institucion.csproj",
         "packagesPath": "C:\\Users\\daqui\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\daqui\\OneDrive\\Desktop\\Institucion\\API_Institucion\\obj\\",
+        "outputPath": "C:\\Users\\daqui\\OneDrive\\Desktop\\Institucion\\API_Institucion\\Sistema-Institucion\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -59,10 +59,6 @@
               "target": "Package",
               "version": "[8.0.10, )"
             },
-            "Microsoft.IdentityModel.Tokens": {
-              "target": "Package",
-              "version": "[8.15.0, )"
-            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.4, )"
@@ -74,6 +70,14 @@
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[8.0.10, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[10.0.0, )"
+            },
+            "Serilog.Sinks.File": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

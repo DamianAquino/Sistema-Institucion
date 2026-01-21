@@ -1,0 +1,186 @@
+2026-01-17 22:51:20.944 -03:00 [INF] User profile is available. Using 'C:\Users\daqui\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-17 22:51:21.666 -03:00 [WRN] Overriding address(es) 'http://0.0.0.0:5000, https://0.0.0.0:5001'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2026-01-17 22:51:21.727 -03:00 [INF] Now listening on: http://0.0.0.0:5000
+2026-01-17 22:51:21.729 -03:00 [INF] Now listening on: https://0.0.0.0:5001
+2026-01-17 22:51:21.803 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-17 22:51:21.805 -03:00 [INF] Hosting environment: Development
+2026-01-17 22:51:21.806 -03:00 [INF] Content root path: C:\Users\daqui\OneDrive\Desktop\Institucion\API_Institucion\Sistema-Institucion
+2026-01-17 22:51:24.250 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2026-01-17 22:51:24.608 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 359.2624ms
+2026-01-17 22:51:24.658 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_vs/browserLink - null null
+2026-01-17 22:51:24.658 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-17 22:51:24.667 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 8.6046ms
+2026-01-17 22:51:24.728 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_vs/browserLink - 200 null text/javascript; charset=UTF-8 69.8643ms
+2026-01-17 22:51:24.917 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - null null
+2026-01-17 22:51:24.930 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 12.993ms
+2026-01-17 22:51:38.782 -03:00 [INF] Request starting HTTP/1.1 POST https://127.0.0.1:5001/api/auth/login - application/json 50
+2026-01-17 22:51:40.519 -03:00 [INF] Executing endpoint 'API_Institucion.Controllers.AuthController.login (API_Institucion)'
+2026-01-17 22:51:40.578 -03:00 [INF] Route matched with {action = "login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult login(API_Institucion.Dtos.Login) on controller API_Institucion.Controllers.AuthController (API_Institucion).
+2026-01-17 22:51:44.373 -03:00 [INF] Executed DbCommand (147ms) [Parameters=[@__login_Dni_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.carrera, u.dni, u.email, u.nombre, u.password, u.rol
+FROM usuarios AS u
+WHERE u.dni = @__login_Dni_0
+LIMIT 2
+2026-01-17 22:51:45.449 -03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-01-17 22:51:45.470 -03:00 [INF] Executed action API_Institucion.Controllers.AuthController.login (API_Institucion) in 4880.0469ms
+2026-01-17 22:51:45.474 -03:00 [INF] Executed endpoint 'API_Institucion.Controllers.AuthController.login (API_Institucion)'
+2026-01-17 22:51:45.485 -03:00 [INF] Request finished HTTP/1.1 POST https://127.0.0.1:5001/api/auth/login - 200 null application/json; charset=utf-8 6703.1076ms
+2026-01-17 22:52:04.165 -03:00 [INF] Request starting HTTP/1.1 GET https://127.0.0.1:5001/api/carreras/inicio - null null
+2026-01-17 22:52:04.212 -03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+ ---> System.MissingMethodException: Method not found: 'Byte[] Microsoft.IdentityModel.Tokens.Base64UrlEncoder.UnsafeDecode(System.ReadOnlyMemory`1<Char>)'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+   --- End of inner exception stack trace ---
+2026-01-17 22:52:04.399 -03:00 [INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-01-17 22:52:04.404 -03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-01-17 22:52:04.413 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-01-17 22:52:04.416 -03:00 [INF] Request finished HTTP/1.1 GET https://127.0.0.1:5001/api/carreras/inicio - 401 0 null 251.0346ms
+2026-01-17 22:54:05.449 -03:00 [INF] Request starting HTTP/1.1 GET https://127.0.0.1:5001/api/carreras/inicio - null null
+2026-01-17 22:54:05.467 -03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+ ---> System.MissingMethodException: Method not found: 'Byte[] Microsoft.IdentityModel.Tokens.Base64UrlEncoder.UnsafeDecode(System.ReadOnlyMemory`1<Char>)'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+   --- End of inner exception stack trace ---
+2026-01-17 22:54:05.470 -03:00 [INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-01-17 22:54:05.474 -03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-01-17 22:54:05.476 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-01-17 22:54:05.477 -03:00 [INF] Request finished HTTP/1.1 GET https://127.0.0.1:5001/api/carreras/inicio - 401 0 null 28.2898ms
+2026-01-17 22:55:12.418 -03:00 [INF] User profile is available. Using 'C:\Users\daqui\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-17 22:55:12.955 -03:00 [WRN] Overriding address(es) 'http://0.0.0.0:5000, https://0.0.0.0:5001'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2026-01-17 22:55:13.017 -03:00 [INF] Now listening on: http://0.0.0.0:5000
+2026-01-17 22:55:13.020 -03:00 [INF] Now listening on: https://0.0.0.0:5001
+2026-01-17 22:55:13.163 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-17 22:55:13.165 -03:00 [INF] Hosting environment: Development
+2026-01-17 22:55:13.167 -03:00 [INF] Content root path: C:\Users\daqui\OneDrive\Desktop\Institucion\API_Institucion\Sistema-Institucion
+2026-01-17 22:55:14.604 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2026-01-17 22:55:15.173 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 600.7458ms
+2026-01-17 22:55:15.198 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_vs/browserLink - null null
+2026-01-17 22:55:15.198 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-17 22:55:15.229 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 31.0223ms
+2026-01-17 22:55:15.271 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_vs/browserLink - 200 null text/javascript; charset=UTF-8 72.6995ms
+2026-01-17 22:55:15.622 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - null null
+2026-01-17 22:55:15.662 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 40.4675ms
+2026-01-17 22:55:57.086 -03:00 [INF] Request starting HTTP/1.1 GET https://127.0.0.1:5001/api/carreras/inicio - null null
+2026-01-17 22:55:58.620 -03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+ ---> System.MissingMethodException: Method not found: 'Byte[] Microsoft.IdentityModel.Tokens.Base64UrlEncoder.UnsafeDecode(System.ReadOnlyMemory`1<Char>)'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+   --- End of inner exception stack trace ---
+2026-01-17 22:55:58.706 -03:00 [INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-01-17 22:55:58.717 -03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-01-17 22:55:58.722 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-01-17 22:55:58.723 -03:00 [INF] Request finished HTTP/1.1 GET https://127.0.0.1:5001/api/carreras/inicio - 401 0 null 1637.656ms
+2026-01-17 22:56:28.971 -03:00 [INF] Request starting HTTP/1.1 POST https://127.0.0.1:5001/api/auth/login - application/json 50
+2026-01-17 22:56:28.979 -03:00 [INF] Executing endpoint 'API_Institucion.Controllers.AuthController.login (API_Institucion)'
+2026-01-17 22:56:29.023 -03:00 [INF] Route matched with {action = "login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult login(API_Institucion.Dtos.Login) on controller API_Institucion.Controllers.AuthController (API_Institucion).
+2026-01-17 22:56:31.049 -03:00 [INF] Executed DbCommand (80ms) [Parameters=[@__login_Dni_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.carrera, u.dni, u.email, u.nombre, u.password, u.rol
+FROM usuarios AS u
+WHERE u.dni = @__login_Dni_0
+LIMIT 2
+2026-01-17 22:56:31.654 -03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-01-17 22:56:31.666 -03:00 [INF] Executed action API_Institucion.Controllers.AuthController.login (API_Institucion) in 2636.9714ms
+2026-01-17 22:56:31.668 -03:00 [INF] Executed endpoint 'API_Institucion.Controllers.AuthController.login (API_Institucion)'
+2026-01-17 22:56:31.677 -03:00 [INF] Request finished HTTP/1.1 POST https://127.0.0.1:5001/api/auth/login - 200 null application/json; charset=utf-8 2706.3513ms
+2026-01-17 22:56:55.581 -03:00 [INF] Request starting HTTP/1.1 GET https://127.0.0.1:5001/api/carreras/inicio - null null
+2026-01-17 22:56:55.592 -03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+ ---> System.MissingMethodException: Method not found: 'Byte[] Microsoft.IdentityModel.Tokens.Base64UrlEncoder.UnsafeDecode(System.ReadOnlyMemory`1<Char>)'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+   --- End of inner exception stack trace ---
+2026-01-17 22:56:55.594 -03:00 [INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-01-17 22:56:55.596 -03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-01-17 22:56:55.597 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-01-17 22:56:55.599 -03:00 [INF] Request finished HTTP/1.1 GET https://127.0.0.1:5001/api/carreras/inicio - 401 0 null 18.8508ms
+2026-01-17 22:59:18.556 -03:00 [INF] Request starting HTTP/1.1 GET https://127.0.0.1:5001/api/carreras/inicio - null null
+2026-01-17 22:59:18.562 -03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+ ---> System.MissingMethodException: Method not found: 'Byte[] Microsoft.IdentityModel.Tokens.Base64UrlEncoder.UnsafeDecode(System.ReadOnlyMemory`1<Char>)'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+   --- End of inner exception stack trace ---
+2026-01-17 22:59:18.564 -03:00 [INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-01-17 22:59:18.567 -03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-01-17 22:59:18.568 -03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-01-17 22:59:18.569 -03:00 [INF] Request finished HTTP/1.1 GET https://127.0.0.1:5001/api/carreras/inicio - 401 0 null 14.1103ms
+2026-01-17 23:01:46.613 -03:00 [INF] User profile is available. Using 'C:\Users\daqui\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-17 23:01:46.880 -03:00 [WRN] Overriding address(es) 'http://0.0.0.0:5000, https://0.0.0.0:5001'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2026-01-17 23:01:46.913 -03:00 [INF] Now listening on: http://0.0.0.0:5000
+2026-01-17 23:01:46.917 -03:00 [INF] Now listening on: https://0.0.0.0:5001
+2026-01-17 23:01:46.982 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-17 23:01:46.984 -03:00 [INF] Hosting environment: Development
+2026-01-17 23:01:46.986 -03:00 [INF] Content root path: C:\Users\daqui\OneDrive\Desktop\Institucion\API_Institucion\Sistema-Institucion
+2026-01-17 23:01:48.513 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2026-01-17 23:01:48.755 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 246.2408ms
+2026-01-17 23:01:48.819 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-17 23:01:48.827 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 7.2179ms
+2026-01-17 23:01:48.832 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_vs/browserLink - null null
+2026-01-17 23:01:48.864 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_vs/browserLink - 200 null text/javascript; charset=UTF-8 31.5344ms
+2026-01-17 23:01:49.011 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - null null
+2026-01-17 23:01:49.168 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 157.327ms
+2026-01-17 23:01:51.306 -03:00 [INF] Request starting HTTP/1.1 POST https://127.0.0.1:5001/api/auth/login - application/json 54
+2026-01-17 23:01:53.136 -03:00 [INF] Executing endpoint 'API_Institucion.Controllers.AuthController.login (API_Institucion)'
+2026-01-17 23:01:53.350 -03:00 [INF] Route matched with {action = "login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult login(API_Institucion.Dtos.Login) on controller API_Institucion.Controllers.AuthController (API_Institucion).
+2026-01-17 23:01:54.993 -03:00 [INF] Executed DbCommand (51ms) [Parameters=[@__login_Dni_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.carrera, u.dni, u.email, u.nombre, u.password, u.rol
+FROM usuarios AS u
+WHERE u.dni = @__login_Dni_0
+LIMIT 2
+2026-01-17 23:01:55.583 -03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-01-17 23:01:55.591 -03:00 [INF] Executed action API_Institucion.Controllers.AuthController.login (API_Institucion) in 2232.9744ms
+2026-01-17 23:01:55.594 -03:00 [INF] Executed endpoint 'API_Institucion.Controllers.AuthController.login (API_Institucion)'
+2026-01-17 23:01:55.603 -03:00 [INF] Request finished HTTP/1.1 POST https://127.0.0.1:5001/api/auth/login - 200 null application/json; charset=utf-8 4297.483ms
+2026-01-17 23:08:24.304 -03:00 [INF] User profile is available. Using 'C:\Users\daqui\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-17 23:08:24.575 -03:00 [WRN] Overriding address(es) 'http://0.0.0.0:5000, https://0.0.0.0:5001'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2026-01-17 23:08:24.609 -03:00 [INF] Now listening on: http://0.0.0.0:5000
+2026-01-17 23:08:24.611 -03:00 [INF] Now listening on: https://0.0.0.0:5001
+2026-01-17 23:08:24.679 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-17 23:08:24.681 -03:00 [INF] Hosting environment: Development
+2026-01-17 23:08:24.682 -03:00 [INF] Content root path: C:\Users\daqui\OneDrive\Desktop\Institucion\API_Institucion\Sistema-Institucion
+2026-01-17 23:08:25.377 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2026-01-17 23:08:25.595 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 220.5301ms
+2026-01-17 23:08:25.767 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_vs/browserLink - null null
+2026-01-17 23:08:25.769 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-17 23:08:25.775 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 6.0673ms
+2026-01-17 23:08:25.800 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_vs/browserLink - 200 null text/javascript; charset=UTF-8 32.6235ms
+2026-01-17 23:08:26.343 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - null null
+2026-01-17 23:08:26.361 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 17.9976ms
+2026-01-17 23:08:26.406 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - null null
+2026-01-17 23:08:26.423 -03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2026-01-17 23:08:26.426 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - 200 628 image/png 19.3961ms
+2026-01-17 23:08:35.616 -03:00 [INF] Request starting HTTP/1.1 POST https://127.0.0.1:5001/api/auth/login - application/json 54
+2026-01-17 23:08:37.060 -03:00 [INF] Executing endpoint 'API_Institucion.Controllers.AuthController.login (API_Institucion)'
+2026-01-17 23:08:37.117 -03:00 [INF] Route matched with {action = "login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult login(API_Institucion.Dtos.Login) on controller API_Institucion.Controllers.AuthController (API_Institucion).
+2026-01-17 23:08:40.393 -03:00 [INF] Executed DbCommand (67ms) [Parameters=[@__login_Dni_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u.id, u.carrera, u.dni, u.email, u.nombre, u.password, u.rol
+FROM usuarios AS u
+WHERE u.dni = @__login_Dni_0
+LIMIT 2
+2026-01-17 23:08:41.226 -03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-01-17 23:08:41.243 -03:00 [INF] Executed action API_Institucion.Controllers.AuthController.login (API_Institucion) in 4117.3255ms
+2026-01-17 23:08:41.246 -03:00 [INF] Executed endpoint 'API_Institucion.Controllers.AuthController.login (API_Institucion)'
+2026-01-17 23:08:41.252 -03:00 [INF] Request finished HTTP/1.1 POST https://127.0.0.1:5001/api/auth/login - 200 null application/json; charset=utf-8 5636.0247ms
